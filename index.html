@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#126e52">
+  <meta name="description" content="Encontrá comercios y productos de Corrientes en un solo lugar.">
+  <title>Mercado Correntino</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand"><span class="mark">MC</span><div><strong>Mercado Correntino</strong><small>Comprá cerca. Vendé local.</small></div></div>
+    <a class="button light" href="#publicar">Publicar producto</a>
+  </header>
+  <main>
+    <section class="hero">
+      <p class="eyebrow">HECHO EN CORRIENTES</p>
+      <h1>Todo lo que buscás,<br><span>cerca tuyo.</span></h1>
+      <p>Descubrí productos y emprendimientos de Corrientes Capital.</p>
+      <label class="search"><span>⌕</span><input id="search" type="search" placeholder="¿Qué estás buscando?" aria-label="Buscar productos"></label>
+      <div id="categories" class="categories">
+        <button class="chip active" data-category="Todos">Todos</button>
+        <button class="chip" data-category="Indumentaria">Indumentaria</button>
+        <button class="chip" data-category="Tecnología">Tecnología</button>
+        <button class="chip" data-category="Hogar">Hogar</button>
+        <button class="chip" data-category="Belleza">Belleza</button>
+        <button class="chip" data-category="Alimentos">Alimentos</button>
+      </div>
+    </section>
+    <section class="section">
+      <div class="section-head"><div><p class="eyebrow">DESCUBRÍ</p><h2>Productos destacados</h2></div><span class="counter" id="count">0 productos</span></div>
+      <div id="products" class="products"></div>
+      <p id="empty" class="empty" hidden>No encontramos productos. Probá con otra búsqueda.</p>
+      <p class="demo-note">Estos son productos de ejemplo para mostrar el diseño. Todavía no son publicaciones reales de comercios.</p>
+    </section>
+    <section id="publicar" class="publish">
+      <div><p class="eyebrow">¿TENÉS UN COMERCIO?</p><h2>Tu próximo cliente puede estar acá.</h2><p>Mostrá tus productos y conectá con compradores de Corrientes.</p></div>
+      <form id="publishForm">
+        <label>Nombre del producto<input name="name" required maxlength="70" placeholder="Ej. Perfume, remera, mate"></label>
+        <div class="form-row">
+          <label>Precio en pesos<input name="price" type="number" min="1" required placeholder="8500"></label>
+          <label>Categoría<select name="category"><option>Indumentaria</option><option>Tecnología</option><option>Hogar</option><option>Belleza</option><option>Alimentos</option><option>Otros</option></select></label>
+        </div>
+        <label>WhatsApp de contacto<input name="phone" required inputmode="tel" placeholder="3794123456"></label>
+        <button class="button" type="submit">Preparar publicación por WhatsApp</button>
+        <small>Esta versión prepara un mensaje para WhatsApp; todavía no guarda productos en una base de datos.</small>
+      </form>
+    </section>
+    <section class="subscribe">
+      <div><p class="eyebrow">PARA EMPRENDEDORES</p><h2>Hacé crecer tu negocio.</h2><p>Más adelante, los comercios podrán acceder a planes de publicación y promoción.</p></div>
+      <a class="button light" href="#publicar">Quiero vender</a>
+    </section>
+  </main>
+  <footer><span>© <span id="year"></span> Mercado Correntino</span><span>Una idea local, para crecer juntos.</span></footer>
+  <script src="app.js"></script>
+  <script>if ('serviceWorker' in navigator && location.protocol.startsWith('http')) navigator.serviceWorker.register('./sw.js').catch(()=>{});</script>
+</body>
+</html>

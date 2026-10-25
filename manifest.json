@@ -1,0 +1,10 @@
+{
+  "name": "Mercado Correntino",
+  "short_name": "Mercado Correntino",
+  "description": "Marketplace de comercios locales de Corrientes",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f8f8f2",
+  "theme_color": "#126e52",
+  "icons": [{"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}
